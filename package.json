@@ -1,0 +1,41 @@
+{
+  "name": "autoroutine-zepp",
+  "version": "1.0.0",
+  "description": "Lightweight offline-first smart automation engine for Amazfit watches",
+  "main": "app.json",
+  "scripts": {
+    "build": "zepp build",
+    "simulator": "zepp simulator",
+    "preview": "zepp preview",
+    "preview:device": "zepp preview --device",
+    "log": "zepp log",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "zepp",
+    "amazfit",
+    "automation",
+    "rules-engine",
+    "smartwatch",
+    "health",
+    "offline",
+    "wearable"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/AutoRoutine-Zepp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/AutoRoutine-Zepp/issues"
+  },
+  "homepage": "https://github.com/yourusername/AutoRoutine-Zepp#readme",
+  "devDependencies": {
+    "@zepp/cli": "^1.0.0",
+    "@zepp/device-types": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
