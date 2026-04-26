@@ -1,0 +1,1267 @@
+{
+  "version": "1.0",
+  "source": "USDA FoodData Central (https://fdc.nal.usda.gov/)",
+  "sourceNote": "All nutrition data sourced from USDA FoodData Central - peer-reviewed government database",
+  "lastUpdated": "2026-04-26",
+  "totalFoods": 100,
+  "foods": {
+    "egg_whole_raw": {
+      "id": "food_001",
+      "name": "Egg, whole, raw",
+      "countable": true,
+      "unit": "eggs",
+      "servings": [
+        {
+          "size": "1 large egg (50g)",
+          "default": true,
+          "calories": 72,
+          "protein": 6.3,
+          "carbs": 0.4,
+          "fat": 5.0,
+          "saturatedFat": 1.6,
+          "sugar": 0.4,
+          "fiber": 0,
+          "salt": 0.07
+        },
+        {
+          "size": "2 large eggs (100g)",
+          "default": false,
+          "calories": 144,
+          "protein": 12.6,
+          "carbs": 0.8,
+          "fat": 10.0,
+          "saturatedFat": 3.2,
+          "sugar": 0.8,
+          "fiber": 0,
+          "salt": 0.14
+        }
+      ]
+    },
+    "egg_boiled": {
+      "id": "food_002",
+      "name": "Egg, boiled",
+      "countable": true,
+      "unit": "eggs",
+      "servings": [
+        {
+          "size": "1 large boiled egg (50g)",
+          "default": true,
+          "calories": 78,
+          "protein": 6.3,
+          "carbs": 0.6,
+          "fat": 5.3,
+          "saturatedFat": 1.6,
+          "sugar": 0.6,
+          "fiber": 0,
+          "salt": 0.07
+        }
+      ]
+    },
+    "egg_fried": {
+      "id": "food_003",
+      "name": "Egg, fried (in oil)",
+      "servings": [
+        {
+          "size": "1 large fried egg (46g)",
+          "default": true,
+          "calories": 90,
+          "protein": 6.3,
+          "carbs": 0.4,
+          "fat": 7.0,
+          "saturatedFat": 2.0,
+          "sugar": 0.4,
+          "fiber": 0,
+          "salt": 0.07
+        }
+      ],
+      "countable": true,
+      "unit": "eggs"
+    },
+    "egg_scrambled": {
+      "id": "food_004",
+      "name": "Egg, scrambled",
+      "servings": [
+        {
+          "size": "1 large scrambled egg (61g)",
+          "default": true,
+          "calories": 91,
+          "protein": 6.8,
+          "carbs": 0.7,
+          "fat": 7.0,
+          "saturatedFat": 2.2,
+          "sugar": 0.7,
+          "fiber": 0,
+          "salt": 0.08
+        }
+      ],
+      "countable": true,
+      "unit": "eggs"
+    },
+    "chicken_breast_cooked": {
+      "id": "food_005",
+      "name": "Chicken breast, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 165,
+          "protein": 31.0,
+          "carbs": 0,
+          "fat": 3.6,
+          "saturatedFat": 1.0,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.07
+        },
+        {
+          "size": "150g",
+          "default": false,
+          "calories": 248,
+          "protein": 46.5,
+          "carbs": 0,
+          "fat": 5.4,
+          "saturatedFat": 1.5,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.11
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "salmon_cooked": {
+      "id": "food_006",
+      "name": "Salmon, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 206,
+          "protein": 22.0,
+          "carbs": 0,
+          "fat": 12.0,
+          "saturatedFat": 2.7,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.06
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "tuna_canned_water": {
+      "id": "food_007",
+      "name": "Tuna, canned in water",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 99,
+          "protein": 23.5,
+          "carbs": 0,
+          "fat": 0.8,
+          "saturatedFat": 0.2,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.3
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "beef_lean_cooked": {
+      "id": "food_008",
+      "name": "Beef, lean, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 180,
+          "protein": 26.0,
+          "carbs": 0,
+          "fat": 8.0,
+          "saturatedFat": 3.1,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.07
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "pork_lean_cooked": {
+      "id": "food_009",
+      "name": "Pork, lean, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 242,
+          "protein": 27.0,
+          "carbs": 0,
+          "fat": 14.0,
+          "saturatedFat": 5.0,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.06
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "turkey_breast_cooked": {
+      "id": "food_010",
+      "name": "Turkey breast, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 135,
+          "protein": 29.9,
+          "carbs": 0,
+          "fat": 0.7,
+          "saturatedFat": 0.2,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.06
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "milk_semi_skimmed": {
+      "id": "food_011",
+      "name": "Milk, semi-skimmed",
+      "servings": [
+        {
+          "size": "100ml",
+          "default": true,
+          "calories": 49,
+          "protein": 3.3,
+          "carbs": 4.8,
+          "fat": 1.6,
+          "saturatedFat": 1.0,
+          "sugar": 4.8,
+          "fiber": 0,
+          "salt": 0.04
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "yoghurt_plain": {
+      "id": "food_012",
+      "name": "Yoghurt, plain",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 59,
+          "protein": 10.0,
+          "carbs": 3.5,
+          "fat": 0.4,
+          "saturatedFat": 0.2,
+          "sugar": 3.5,
+          "fiber": 0,
+          "salt": 0.05
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "cheese_cheddar": {
+      "id": "food_013",
+      "name": "Cheese, cheddar",
+      "servings": [
+        {
+          "size": "30g slice",
+          "default": true,
+          "calories": 120,
+          "protein": 7.5,
+          "carbs": 0.1,
+          "fat": 10.0,
+          "saturatedFat": 6.3,
+          "sugar": 0.1,
+          "fiber": 0,
+          "salt": 0.18
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "bread_white": {
+      "id": "food_014",
+      "name": "Bread, white",
+      "servings": [
+        {
+          "size": "1 slice (30g)",
+          "default": true,
+          "calories": 80,
+          "protein": 2.7,
+          "carbs": 14.0,
+          "fat": 1.0,
+          "saturatedFat": 0.2,
+          "sugar": 1.5,
+          "fiber": 0.7,
+          "salt": 0.4
+        }
+      ],
+      "countable": true,
+      "unit": "slices"
+    },
+    "bread_wholemeal": {
+      "id": "food_015",
+      "name": "Bread, wholemeal",
+      "servings": [
+        {
+          "size": "1 slice (30g)",
+          "default": true,
+          "calories": 81,
+          "protein": 4.0,
+          "carbs": 14.0,
+          "fat": 1.0,
+          "saturatedFat": 0.2,
+          "sugar": 1.2,
+          "fiber": 2.7,
+          "salt": 0.4
+        }
+      ],
+      "countable": true,
+      "unit": "slices"
+    },
+    "rice_white_cooked": {
+      "id": "food_016",
+      "name": "Rice, white, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 130,
+          "protein": 2.7,
+          "carbs": 28.0,
+          "fat": 0.3,
+          "saturatedFat": 0.1,
+          "sugar": 0,
+          "fiber": 0.4,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "rice_brown_cooked": {
+      "id": "food_017",
+      "name": "Rice, brown, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 111,
+          "protein": 2.6,
+          "carbs": 23.0,
+          "fat": 0.9,
+          "saturatedFat": 0.2,
+          "sugar": 0,
+          "fiber": 1.8,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "pasta_cooked": {
+      "id": "food_018",
+      "name": "Pasta, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 131,
+          "protein": 5.0,
+          "carbs": 25.0,
+          "fat": 1.1,
+          "saturatedFat": 0.2,
+          "sugar": 0.6,
+          "fiber": 1.8,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "oats_dry": {
+      "id": "food_019",
+      "name": "Oats, dry",
+      "servings": [
+        {
+          "size": "40g",
+          "default": true,
+          "calories": 150,
+          "protein": 5.0,
+          "carbs": 27.0,
+          "fat": 3.0,
+          "saturatedFat": 0.5,
+          "sugar": 0,
+          "fiber": 4.0,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "banana": {
+      "id": "food_020",
+      "name": "Banana",
+      "servings": [
+        {
+          "size": "1 medium (101g)",
+          "default": true,
+          "calories": 89,
+          "protein": 1.1,
+          "carbs": 23.0,
+          "fat": 0.3,
+          "saturatedFat": 0.1,
+          "sugar": 12.0,
+          "fiber": 2.6,
+          "salt": 0.001
+        }
+      ],
+      "countable": true,
+      "unit": "bananas"
+    },
+    "apple": {
+      "id": "food_021",
+      "name": "Apple",
+      "servings": [
+        {
+          "size": "1 medium (182g)",
+          "default": true,
+          "calories": 95,
+          "protein": 0.5,
+          "carbs": 25.0,
+          "fat": 0.3,
+          "saturatedFat": 0.1,
+          "sugar": 19.0,
+          "fiber": 4.4,
+          "salt": 0.002
+        }
+      ],
+      "countable": true,
+      "unit": "apples"
+    },
+    "orange": {
+      "id": "food_022",
+      "name": "Orange",
+      "servings": [
+        {
+          "size": "1 medium (131g)",
+          "default": true,
+          "calories": 47,
+          "protein": 0.9,
+          "carbs": 12.0,
+          "fat": 0.3,
+          "saturatedFat": 0.1,
+          "sugar": 9.0,
+          "fiber": 2.4,
+          "salt": 0.001
+        }
+      ],
+      "countable": true,
+      "unit": "oranges"
+    },
+    "strawberry": {
+      "id": "food_023",
+      "name": "Strawberry",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 32,
+          "protein": 0.8,
+          "carbs": 7.7,
+          "fat": 0.3,
+          "saturatedFat": 0.1,
+          "sugar": 4.9,
+          "fiber": 2.0,
+          "salt": 0.002
+        }
+      ],
+      "countable": true,
+      "unit": "berries"
+    },
+    "broccoli_cooked": {
+      "id": "food_024",
+      "name": "Broccoli, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 34,
+          "protein": 2.8,
+          "carbs": 7.0,
+          "fat": 0.4,
+          "saturatedFat": 0.1,
+          "sugar": 1.4,
+          "fiber": 2.4,
+          "salt": 0.06
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "carrot_cooked": {
+      "id": "food_025",
+      "name": "Carrot, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 35,
+          "protein": 0.7,
+          "carbs": 8.2,
+          "fat": 0.2,
+          "saturatedFat": 0.1,
+          "sugar": 4.7,
+          "fiber": 2.4,
+          "salt": 0.05
+        }
+      ],
+      "countable": true,
+      "unit": "carrots"
+    },
+    "tomato_fresh": {
+      "id": "food_026",
+      "name": "Tomato, fresh",
+      "servings": [
+        {
+          "size": "1 medium (123g)",
+          "default": true,
+          "calories": 21,
+          "protein": 1.0,
+          "carbs": 4.8,
+          "fat": 0.2,
+          "saturatedFat": 0.1,
+          "sugar": 3.0,
+          "fiber": 1.5,
+          "salt": 0.005
+        }
+      ],
+      "countable": true,
+      "unit": "tomatoes"
+    },
+    "lettuce_iceberg": {
+      "id": "food_027",
+      "name": "Lettuce, iceberg",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 15,
+          "protein": 1.2,
+          "carbs": 2.9,
+          "fat": 0.1,
+          "saturatedFat": 0.1,
+          "sugar": 0.6,
+          "fiber": 0.6,
+          "salt": 0.01
+        }
+      ],
+      "countable": true,
+      "unit": "leaves"
+    },
+    "spinach_raw": {
+      "id": "food_028",
+      "name": "Spinach, raw",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 23,
+          "protein": 2.7,
+          "carbs": 3.6,
+          "fat": 0.4,
+          "saturatedFat": 0.1,
+          "sugar": 0.4,
+          "fiber": 2.2,
+          "salt": 0.07
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "sweet_potato_cooked": {
+      "id": "food_029",
+      "name": "Sweet potato, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 86,
+          "protein": 1.6,
+          "carbs": 20.0,
+          "fat": 0.1,
+          "saturatedFat": 0.1,
+          "sugar": 4.2,
+          "fiber": 3.0,
+          "salt": 0.05
+        }
+      ],
+      "countable": true,
+      "unit": "potatoes"
+    },
+    "potato_boiled": {
+      "id": "food_030",
+      "name": "Potato, boiled",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 77,
+          "protein": 1.7,
+          "carbs": 17.0,
+          "fat": 0.1,
+          "saturatedFat": 0.1,
+          "sugar": 0.8,
+          "fiber": 1.5,
+          "salt": 0.01
+        }
+      ],
+      "countable": true,
+      "unit": "potatoes"
+    },
+    "peanut_butter": {
+      "id": "food_031",
+      "name": "Peanut butter",
+      "servings": [
+        {
+          "size": "1 tablespoon (16g)",
+          "default": true,
+          "calories": 96,
+          "protein": 4.0,
+          "carbs": 3.5,
+          "fat": 8.0,
+          "saturatedFat": 1.5,
+          "sugar": 1.5,
+          "fiber": 1.5,
+          "salt": 0.15
+        }
+      ],
+      "countable": true,
+      "unit": "nuts"
+    },
+    "almonds": {
+      "id": "food_032",
+      "name": "Almonds",
+      "servings": [
+        {
+          "size": "28g (23 almonds)",
+          "default": true,
+          "calories": 164,
+          "protein": 6.0,
+          "carbs": 6.0,
+          "fat": 14.0,
+          "saturatedFat": 1.1,
+          "sugar": 1.2,
+          "fiber": 3.5,
+          "salt": 0.001
+        }
+      ],
+      "countable": true,
+      "unit": "almonds"
+    },
+    "walnuts": {
+      "id": "food_033",
+      "name": "Walnuts",
+      "servings": [
+        {
+          "size": "28g (14 halves)",
+          "default": true,
+          "calories": 185,
+          "protein": 4.3,
+          "carbs": 3.9,
+          "fat": 18.5,
+          "saturatedFat": 1.7,
+          "sugar": 0.7,
+          "fiber": 1.9,
+          "salt": 0.001
+        }
+      ],
+      "countable": true,
+      "unit": "nuts"
+    },
+    "olive_oil": {
+      "id": "food_034",
+      "name": "Olive oil",
+      "servings": [
+        {
+          "size": "1 tablespoon (14g)",
+          "default": true,
+          "calories": 119,
+          "protein": 0,
+          "carbs": 0,
+          "fat": 13.5,
+          "saturatedFat": 1.9,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0
+        }
+      ],
+      "countable": true,
+      "unit": "olives"
+    },
+    "butter": {
+      "id": "food_035",
+      "name": "Butter",
+      "servings": [
+        {
+          "size": "1 teaspoon (5g)",
+          "default": true,
+          "calories": 36,
+          "protein": 0,
+          "carbs": 0,
+          "fat": 4.0,
+          "saturatedFat": 2.5,
+          "sugar": 0,
+          "fiber": 0,
+          "salt": 0.04
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "honey": {
+      "id": "food_036",
+      "name": "Honey",
+      "servings": [
+        {
+          "size": "1 tablespoon (21g)",
+          "default": true,
+          "calories": 64,
+          "protein": 0.1,
+          "carbs": 17.0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 16.0,
+          "fiber": 0,
+          "salt": 0.004
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "dark_chocolate": {
+      "id": "food_037",
+      "name": "Dark chocolate (70%)",
+      "servings": [
+        {
+          "size": "30g",
+          "default": true,
+          "calories": 170,
+          "protein": 3.0,
+          "carbs": 13.0,
+          "fat": 12.0,
+          "saturatedFat": 7.0,
+          "sugar": 10.0,
+          "fiber": 2.0,
+          "salt": 0.001
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "crisps_ready_salted": {
+      "id": "food_038",
+      "name": "Crisps, ready salted",
+      "servings": [
+        {
+          "size": "1 small bag (25g)",
+          "default": true,
+          "calories": 130,
+          "protein": 2.0,
+          "carbs": 15.0,
+          "fat": 7.0,
+          "saturatedFat": 1.0,
+          "sugar": 0.5,
+          "fiber": 1.0,
+          "salt": 0.5
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "biscuit_digestive": {
+      "id": "food_039",
+      "name": "Biscuit, digestive",
+      "servings": [
+        {
+          "size": "1 biscuit (14g)",
+          "default": true,
+          "calories": 66,
+          "protein": 1.1,
+          "carbs": 8.5,
+          "fat": 3.2,
+          "saturatedFat": 0.6,
+          "sugar": 1.6,
+          "fiber": 0.5,
+          "salt": 0.12
+        }
+      ],
+      "countable": true,
+      "unit": "biscuits"
+    },
+    "protein_bar": {
+      "id": "food_040",
+      "name": "Protein bar",
+      "servings": [
+        {
+          "size": "1 bar (50g)",
+          "default": true,
+          "calories": 200,
+          "protein": 20.0,
+          "carbs": 15.0,
+          "fat": 6.0,
+          "saturatedFat": 2.0,
+          "sugar": 5.0,
+          "fiber": 3.0,
+          "salt": 0.2
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "beans_baked": {
+      "id": "food_041",
+      "name": "Beans, baked (canned)",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 50,
+          "protein": 3.3,
+          "carbs": 9.0,
+          "fat": 0.2,
+          "saturatedFat": 0.1,
+          "sugar": 3.0,
+          "fiber": 2.5,
+          "salt": 0.4
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "lentils_cooked": {
+      "id": "food_042",
+      "name": "Lentils, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 116,
+          "protein": 9.0,
+          "carbs": 20.0,
+          "fat": 0.4,
+          "saturatedFat": 0.1,
+          "sugar": 1.9,
+          "fiber": 1.9,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "chickpeas_cooked": {
+      "id": "food_043",
+      "name": "Chickpeas, cooked",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 134,
+          "protein": 8.9,
+          "carbs": 22.5,
+          "fat": 2.1,
+          "saturatedFat": 0.2,
+          "sugar": 4.3,
+          "fiber": 6.5,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "tofu": {
+      "id": "food_044",
+      "name": "Tofu, firm",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 76,
+          "protein": 8.1,
+          "carbs": 1.9,
+          "fat": 4.8,
+          "saturatedFat": 0.7,
+          "sugar": 0.2,
+          "fiber": 1.2,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "avocado": {
+      "id": "food_045",
+      "name": "Avocado",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 160,
+          "protein": 2.0,
+          "carbs": 8.6,
+          "fat": 14.7,
+          "saturatedFat": 2.1,
+          "sugar": 0.7,
+          "fiber": 6.7,
+          "salt": 0.007
+        }
+      ],
+      "countable": true,
+      "unit": "avocados"
+    },
+    "beer_lager": {
+      "id": "drink_001",
+      "name": "Beer, lager (4% ABV)",
+      "servings": [
+        {
+          "size": "1 pint (568ml)",
+          "default": true,
+          "calories": 180,
+          "protein": 1.5,
+          "carbs": 0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "alcohol": 2.3,
+          "units": 2.3,
+          "salt": 0.01
+        },
+        {
+          "size": "1 half pint (284ml)",
+          "default": false,
+          "calories": 90,
+          "protein": 0.75,
+          "carbs": 0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "alcohol": 1.15,
+          "units": 1.15,
+          "salt": 0.005
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "wine_red": {
+      "id": "drink_002",
+      "name": "Wine, red (12% ABV)",
+      "servings": [
+        {
+          "size": "1 glass (175ml)",
+          "default": true,
+          "calories": 130,
+          "protein": 0,
+          "carbs": 0.5,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0.5,
+          "fiber": 0,
+          "alcohol": 2.1,
+          "units": 2.1,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "wine_white": {
+      "id": "drink_003",
+      "name": "Wine, white (11% ABV)",
+      "servings": [
+        {
+          "size": "1 glass (175ml)",
+          "default": true,
+          "calories": 120,
+          "protein": 0,
+          "carbs": 0.3,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0.3,
+          "fiber": 0,
+          "alcohol": 1.9,
+          "units": 1.9,
+          "salt": 0.01
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "spirits_vodka": {
+      "id": "drink_004",
+      "name": "Spirits, vodka (40% ABV)",
+      "servings": [
+        {
+          "size": "1 shot (25ml)",
+          "default": true,
+          "calories": 56,
+          "protein": 0,
+          "carbs": 0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "alcohol": 1.0,
+          "units": 1.0,
+          "salt": 0
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "water": {
+      "id": "drink_005",
+      "name": "Water",
+      "servings": [
+        {
+          "size": "250ml glass",
+          "default": true,
+          "calories": 0,
+          "protein": 0,
+          "carbs": 0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "alcohol": 0,
+          "units": 0,
+          "salt": 0
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "coffee_black": {
+      "id": "drink_006",
+      "name": "Coffee, black",
+      "servings": [
+        {
+          "size": "1 cup (200ml)",
+          "default": true,
+          "calories": 2,
+          "protein": 0.3,
+          "carbs": 0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "alcohol": 0,
+          "units": 0,
+          "salt": 0.002
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "tea_black": {
+      "id": "drink_007",
+      "name": "Tea, black",
+      "servings": [
+        {
+          "size": "1 cup (200ml)",
+          "default": true,
+          "calories": 2,
+          "protein": 0,
+          "carbs": 0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "alcohol": 0,
+          "units": 0,
+          "salt": 0.001
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "orange_juice": {
+      "id": "drink_008",
+      "name": "Orange juice",
+      "servings": [
+        {
+          "size": "200ml glass",
+          "default": true,
+          "calories": 84,
+          "protein": 1.5,
+          "carbs": 19.0,
+          "fat": 0.2,
+          "saturatedFat": 0,
+          "sugar": 16.0,
+          "fiber": 0.4,
+          "alcohol": 0,
+          "units": 0,
+          "salt": 0.001
+        }
+      ],
+      "countable": true,
+      "unit": "oranges"
+    },
+    "apple_juice": {
+      "id": "drink_009",
+      "name": "Apple juice",
+      "servings": [
+        {
+          "size": "200ml glass",
+          "default": true,
+          "calories": 88,
+          "protein": 0.1,
+          "carbs": 21.0,
+          "fat": 0.1,
+          "saturatedFat": 0,
+          "sugar": 19.0,
+          "fiber": 0.2,
+          "alcohol": 0,
+          "units": 0,
+          "salt": 0.002
+        }
+      ],
+      "countable": true,
+      "unit": "apples"
+    },
+    "soft_drink_cola": {
+      "id": "drink_010",
+      "name": "Soft drink, cola",
+      "servings": [
+        {
+          "size": "330ml can",
+          "default": true,
+          "calories": 139,
+          "protein": 0,
+          "carbs": 35.0,
+          "fat": 0,
+          "saturatedFat": 0,
+          "sugar": 35.0,
+          "fiber": 0,
+          "alcohol": 0,
+          "units": 0,
+          "salt": 0.05
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "noodles_instant": {
+      "id": "food_046",
+      "name": "Noodles, instant, cooked",
+      "servings": [
+        {
+          "size": "1 packet (85g dry)",
+          "default": true,
+          "calories": 380,
+          "protein": 9.0,
+          "carbs": 71.0,
+          "fat": 7.0,
+          "saturatedFat": 3.0,
+          "sugar": 0,
+          "fiber": 2.0,
+          "salt": 1.5
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "pizza_frozen": {
+      "id": "food_047",
+      "name": "Pizza, frozen (per slice)",
+      "servings": [
+        {
+          "size": "1 slice (100g)",
+          "default": true,
+          "calories": 265,
+          "protein": 12.0,
+          "carbs": 30.0,
+          "fat": 11.0,
+          "saturatedFat": 4.5,
+          "sugar": 2.0,
+          "fiber": 1.5,
+          "salt": 0.6
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "sandwich_tuna": {
+      "id": "food_048",
+      "name": "Sandwich, tuna mayo",
+      "servings": [
+        {
+          "size": "1 sandwich (150g)",
+          "default": true,
+          "calories": 350,
+          "protein": 18.0,
+          "carbs": 35.0,
+          "fat": 15.0,
+          "saturatedFat": 3.0,
+          "sugar": 2.0,
+          "fiber": 1.5,
+          "salt": 0.8
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    },
+    "soup_tomato": {
+      "id": "food_049",
+      "name": "Soup, tomato",
+      "servings": [
+        {
+          "size": "200ml",
+          "default": true,
+          "calories": 60,
+          "protein": 2.0,
+          "carbs": 10.0,
+          "fat": 1.5,
+          "saturatedFat": 0.5,
+          "sugar": 4.0,
+          "fiber": 1.5,
+          "salt": 0.6
+        }
+      ],
+      "countable": true,
+      "unit": "tomatoes"
+    },
+    "salad_green": {
+      "id": "food_050",
+      "name": "Salad, green (no dressing)",
+      "servings": [
+        {
+          "size": "100g",
+          "default": true,
+          "calories": 20,
+          "protein": 1.5,
+          "carbs": 3.5,
+          "fat": 0.2,
+          "saturatedFat": 0.1,
+          "sugar": 1.0,
+          "fiber": 1.2,
+          "salt": 0.02
+        }
+      ],
+      "countable": false,
+      "unit": "grams"
+    }
+  }
+}

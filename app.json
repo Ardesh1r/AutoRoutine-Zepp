@@ -36,7 +36,8 @@
       "pages/index",
       "pages/routine-detail",
       "pages/rule-editor",
-      "pages/status"
+      "pages/status",
+      "pages/meal_logger"
     ],
     "defaultPage": "pages/index"
   },
@@ -57,6 +58,10 @@
       {
         "path": "pages/status",
         "component": "pages/status"
+      },
+      {
+        "path": "pages/meal_logger",
+        "component": "pages/meal_logger"
       }
     ],
     "workers": [

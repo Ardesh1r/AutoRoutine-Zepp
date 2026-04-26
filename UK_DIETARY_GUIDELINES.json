@@ -1,0 +1,314 @@
+{
+  "version": "1.0",
+  "source": "NHS & UK Government Dietary Guidelines",
+  "sourceUrl": "https://www.nhs.uk/live-well/eat-well/ & https://www.food.gov.uk/",
+  "lastUpdated": "2026-04-26",
+  "recommendedDailyIntake": {
+    "adult_male": {
+      "age": "19-50 years",
+      "calories": 2500,
+      "protein": 55,
+      "carbs": 300,
+      "fat": 95,
+      "saturatedFat": 30,
+      "sugar": 50,
+      "fiber": 30,
+      "salt": 6,
+      "water": 3.7,
+      "alcoholUnits": 14
+    },
+    "adult_female": {
+      "age": "19-50 years",
+      "calories": 2000,
+      "protein": 45,
+      "carbs": 240,
+      "fat": 70,
+      "saturatedFat": 20,
+      "sugar": 50,
+      "fiber": 30,
+      "salt": 6,
+      "water": 2.7,
+      "alcoholUnits": 14
+    },
+    "adult_male_51plus": {
+      "age": "51+ years",
+      "calories": 2400,
+      "protein": 55,
+      "carbs": 290,
+      "fat": 90,
+      "saturatedFat": 30,
+      "sugar": 50,
+      "fiber": 30,
+      "salt": 6,
+      "water": 3.7,
+      "alcoholUnits": 14
+    },
+    "adult_female_51plus": {
+      "age": "51+ years",
+      "calories": 1900,
+      "protein": 45,
+      "carbs": 230,
+      "fat": 70,
+      "saturatedFat": 20,
+      "sugar": 50,
+      "fiber": 30,
+      "salt": 6,
+      "water": 2.7,
+      "alcoholUnits": 14
+    }
+  },
+  "macroBreakdown": {
+    "description": "UK recommended macro distribution",
+    "protein": {
+      "percentage": "10-15%",
+      "grams_per_kg": 0.8,
+      "note": "1.2-2.0g/kg if exercising regularly"
+    },
+    "carbs": {
+      "percentage": "45-65%",
+      "note": "Focus on whole grains, fruits, vegetables"
+    },
+    "fat": {
+      "percentage": "20-35%",
+      "saturatedFat": "less than 10%",
+      "note": "Limit saturated fat, focus on unsaturated"
+    },
+    "sugar": {
+      "percentage": "less than 5%",
+      "grams": "less than 30g per day",
+      "note": "Free sugars only, not natural sugars in fruit"
+    },
+    "fiber": {
+      "grams": "30g per day",
+      "note": "Whole grains, fruits, vegetables, legumes"
+    },
+    "salt": {
+      "grams": "6g per day",
+      "note": "About 1 teaspoon"
+    }
+  },
+  "mealGuidelines": {
+    "breakfast": {
+      "calories": "20-25%",
+      "calorieRange": "400-625",
+      "examples": [
+        "Oats with banana and yoghurt",
+        "Eggs on toast with tomato",
+        "Cereal with milk and fruit"
+      ]
+    },
+    "lunch": {
+      "calories": "30-35%",
+      "calorieRange": "600-875",
+      "examples": [
+        "Chicken with rice and vegetables",
+        "Tuna sandwich with salad",
+        "Pasta with tomato sauce and vegetables"
+      ]
+    },
+    "dinner": {
+      "calories": "30-35%",
+      "calorieRange": "600-875",
+      "examples": [
+        "Salmon with sweet potato and broccoli",
+        "Beef with pasta and vegetables",
+        "Chicken curry with rice"
+      ]
+    },
+    "snacks": {
+      "calories": "10-15%",
+      "calorieRange": "200-300",
+      "examples": [
+        "Apple with peanut butter",
+        "Almonds",
+        "Yoghurt",
+        "Banana"
+      ]
+    }
+  },
+  "alcoholGuidelines": {
+    "source": "NHS & UK Government",
+    "sourceUrl": "https://www.nhs.uk/live-well/alcohol-support/",
+    "safeLimit": {
+      "men": 14,
+      "women": 14,
+      "unit": "units per week",
+      "note": "Spread over 3+ days, not binge drinking"
+    },
+    "dailyLimit": {
+      "men": 4,
+      "women": 3,
+      "unit": "units per day",
+      "note": "Maximum, not recommended daily"
+    },
+    "bingeThreshold": {
+      "men": 8,
+      "women": 6,
+      "unit": "units in one session",
+      "note": "Increases health risks significantly"
+    },
+    "unitDefinition": {
+      "beer_pint": 2.3,
+      "beer_half_pint": 1.15,
+      "beer_bottle": 1.3,
+      "wine_glass": 2.1,
+      "wine_large_glass": 3,
+      "spirits_shot": 1,
+      "cocktail": 2.5
+    },
+    "healthRisks": {
+      "low": "0-14 units/week",
+      "moderate": "15-35 units/week",
+      "high": "35+ units/week"
+    }
+  },
+  "foodGroups": {
+    "carbohydrates": {
+      "percentage": "45-65%",
+      "servings": "5-8 per day",
+      "examples": [
+        "Bread",
+        "Rice",
+        "Pasta",
+        "Potatoes",
+        "Cereals",
+        "Oats"
+      ],
+      "note": "Choose whole grain options when possible"
+    },
+    "protein": {
+      "percentage": "10-15%",
+      "servings": "2-3 per day",
+      "examples": [
+        "Chicken",
+        "Fish",
+        "Eggs",
+        "Beans",
+        "Lentils",
+        "Nuts",
+        "Meat"
+      ],
+      "note": "Vary protein sources, include fish 2x per week"
+    },
+    "fat": {
+      "percentage": "20-35%",
+      "saturatedFat": "less than 10%",
+      "examples": [
+        "Olive oil",
+        "Nuts",
+        "Avocado",
+        "Fatty fish",
+        "Seeds"
+      ],
+      "note": "Focus on unsaturated fats"
+    },
+    "fruit_vegetables": {
+      "servings": "5 per day",
+      "examples": [
+        "Apples",
+        "Bananas",
+        "Berries",
+        "Broccoli",
+        "Carrots",
+        "Tomatoes",
+        "Lettuce"
+      ],
+      "note": "Variety of colors for different nutrients"
+    },
+    "dairy": {
+      "servings": "2-3 per day",
+      "examples": [
+        "Milk",
+        "Yoghurt",
+        "Cheese"
+      ],
+      "note": "Choose lower fat options when possible"
+    }
+  },
+  "hydration": {
+    "water_female": {
+      "liters": 2.7,
+      "cups": 11,
+      "note": "About 20% comes from food, 80% from drinks"
+    },
+    "water_male": {
+      "liters": 3.7,
+      "cups": 15,
+      "note": "About 20% comes from food, 80% from drinks"
+    }
+  },
+  "specialDiets": {
+    "vegetarian": {
+      "protein_sources": [
+        "Beans",
+        "Lentils",
+        "Tofu",
+        "Nuts",
+        "Seeds",
+        "Eggs",
+        "Dairy"
+      ],
+      "note": "Ensure adequate protein and B12"
+    },
+    "vegan": {
+      "protein_sources": [
+        "Beans",
+        "Lentils",
+        "Tofu",
+        "Nuts",
+        "Seeds",
+        "Whole grains"
+      ],
+      "note": "May need B12 supplement"
+    },
+    "weightLoss": {
+      "calories": "500 deficit from TDEE",
+      "note": "Aim for 0.5-1kg loss per week",
+      "protein": "Higher protein to preserve muscle"
+    }
+  },
+  "nutritionTips": {
+    "breakfast": [
+      "Include protein (eggs, yoghurt, nuts)",
+      "Add whole grains (oats, wholemeal bread)",
+      "Include fruit for vitamins and fiber"
+    ],
+    "lunch": [
+      "Include lean protein (chicken, fish, beans)",
+      "Add vegetables (at least 2 types)",
+      "Include whole grains (brown rice, wholemeal bread)"
+    ],
+    "dinner": [
+      "Include lean protein (salmon, beef, tofu)",
+      "Add vegetables (at least 2-3 types)",
+      "Include complex carbs (sweet potato, brown rice)"
+    ],
+    "snacks": [
+      "Choose protein-rich snacks (nuts, yoghurt, cheese)",
+      "Include fruit and vegetables",
+      "Avoid sugary snacks"
+    ]
+  },
+  "warningThresholds": {
+    "sugar": {
+      "warning": 50,
+      "critical": 75,
+      "note": "Free sugars only"
+    },
+    "salt": {
+      "warning": 6,
+      "critical": 8,
+      "note": "Grams per day"
+    },
+    "saturatedFat": {
+      "warning": 30,
+      "critical": 40,
+      "note": "Grams per day"
+    },
+    "alcohol": {
+      "warning": 14,
+      "critical": 21,
+      "note": "Units per week"
+    }
+  }
+}

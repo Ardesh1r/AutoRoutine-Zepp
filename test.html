@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meal Logger Test - Browser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #0f3460;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            padding: 12px 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+        
+        .header p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 12px;
+            min-height: 400px;
+        }
+        
+        .screen {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .screen.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 4px 0;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(0,212,255,0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button.secondary {
+            background: #1a3a52;
+            border: 1px solid #00d4ff;
+            padding: 8px;
+            font-size: 13px;
+        }
+        
+        button.secondary:hover {
+            background: #2a4a62;
+        }
+        
+        button.small {
+            padding: 6px 10px;
+            font-size: 12px;
+            margin: 2px;
+            width: auto;
+            display: inline-block;
+        }
+        
+        .divider {
+            margin: 10px 0;
+            border: none;
+            border-top: 1px solid #1a3a52;
+        }
+        
+        h2 {
+            margin: 10px 0 8px 0;
+            font-size: 16px;
+            color: #00d4ff;
+        }
+        
+        .summary {
+            background: #1a3a52;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #0f3460;
+            font-size: 14px;
+        }
+        
+        .stat:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-label {
+            color: #aaa;
+        }
+        
+        .stat-value {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        
+        .stat-value.warning {
+            color: #ffaa00;
+        }
+        
+        .stat-value.danger {
+            color: #ff4444;
+        }
+        
+        .stat-value.success {
+            color: #00ff00;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 8px 12px;
+            margin: 8px 0;
+            background: #1a3a52;
+            border: 1px solid #00d4ff;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        .search-box::placeholder {
+            color: #666;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #00ffff;
+            box-shadow: 0 0 8px rgba(0,212,255,0.3);
+        }
+        
+        .food-list {
+            max-height: 280px;
+            overflow-y: auto;
+            margin: 8px 0;
+            border: 1px solid #1a3a52;
+            border-radius: 6px;
+            background: #0a2540;
+        }
+        
+        .food-item {
+            padding: 8px 10px;
+            margin: 0;
+            background: transparent;
+            border-bottom: 1px solid #1a3a52;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .food-item:last-child {
+            border-bottom: none;
+        }
+        
+        .food-item:hover {
+            background: #1a3a52;
+            padding-left: 12px;
+        }
+        
+        .food-info {
+            flex: 1;
+        }
+        
+        .food-name {
+            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+        
+        .food-serving {
+            font-size: 11px;
+            color: #888;
+        }
+        
+        .food-cal {
+            font-size: 12px;
+            color: #00d4ff;
+            font-weight: 500;
+            min-width: 50px;
+            text-align: right;
+        }
+        
+        .message {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .message.success {
+            background: #1a4d2e;
+            color: #00ff00;
+        }
+        
+        .message.error {
+            background: #4d1a1a;
+            color: #ff4444;
+        }
+        
+        .message.info {
+            background: #1a3a52;
+            color: #00d4ff;
+        }
+        
+        .quick-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin: 8px 0;
+        }
+        
+        .quick-buttons button {
+            margin: 0;
+            padding: 8px;
+            font-size: 12px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin: 8px 0;
+            background: #1a3a52;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        
+        .quantity-label {
+            font-size: 13px;
+            color: #aaa;
+            min-width: 80px;
+        }
+        
+        .quantity-input {
+            flex: 1;
+            padding: 6px 8px;
+            background: #0a2540;
+            border: 1px solid #00d4ff;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 13px;
+            text-align: center;
+        }
+        
+        .quantity-input:focus {
+            outline: none;
+            border-color: #00ffff;
+            box-shadow: 0 0 6px rgba(0,212,255,0.3);
+        }
+        
+        .quantity-buttons {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .qty-btn {
+            padding: 6px 10px;
+            background: #00d4ff;
+            color: #0f3460;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+        
+        .qty-btn:hover {
+            background: #00ffff;
+            transform: scale(1.05);
+        }
+        
+        .add-button {
+            background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+            color: #000;
+            font-weight: bold;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        .add-button:hover {
+            background: linear-gradient(135deg, #00ffff 0%, #00dddd 100%);
+            color: #000;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .stat-card {
+            background: #1a3a52;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card-label {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .spinner {
+            border: 3px solid #1a3a52;
+            border-top: 3px solid #00d4ff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .footer {
+            background: #1a3a52;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            border-top: 1px solid #0f3460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Meal Logger</h1>
+            <p>Test Version - Browser</p>
+        </div>
+        
+        <div class="content">
+            <!-- Loading Screen -->
+            <div id="loading" class="screen active">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading meal logger...</p>
+                </div>
+            </div>
+            
+            <!-- Main Screen -->
+            <div id="main" class="screen">
+                <button onclick="showScreen('summary')">📊 View Daily Summary</button>
+                <button onclick="showScreen('mealType')">➕ Log Meal</button>
+                
+                <hr class="divider">
+                
+                <h2>Quick Log</h2>
+                <div class="quick-buttons">
+                    <button onclick="quickLog('food_001', '1 large egg (50g)')">🥚 Egg</button>
+                    <button onclick="quickLog('food_021', '1 medium (182g)')">🍎 Apple</button>
+                    <button onclick="quickLog('food_005', '100g')">🍗 Chicken</button>
+                    <button onclick="quickLog('drink_005', '250ml glass')">💧 Water</button>
+                </div>
+                
+                <hr class="divider">
+                
+                <button class="secondary" onclick="showScreen('settings')">⚙️ Settings</button>
+            </div>
+
+            <!-- Meal Type Selection -->
+            <div id="mealType" class="screen">
+                <h2>Select Meal Type</h2>
+                <button onclick="selectMealType('breakfast')">☀️ Breakfast</button>
+                <button onclick="selectMealType('lunch')">🌤️ Lunch</button>
+                <button onclick="selectMealType('dinner')">🌙 Dinner</button>
+                <button onclick="selectMealType('snacks')">🍿 Snack</button>
+                <button onclick="selectMealType('drinks')">🍺 Drink</button>
+                <button class="secondary" onclick="showScreen('main')">← Back</button>
+            </div>
+
+            <!-- Food Selection -->
+            <div id="foodList" class="screen">
+                <h2>Select Food</h2>
+                <input type="text" id="foodSearch" class="search-box" placeholder="Search foods..." onkeyup="filterFoods()">
+                <div id="foodListContent" class="food-list"></div>
+                <button class="secondary" onclick="showScreen('mealType')">← Back</button>
+            </div>
+
+            <!-- Serving Size -->
+            <div id="servingSize" class="screen">
+                <h2 id="servingTitle">Select Serving</h2>
+                <div id="servingContent"></div>
+                
+                <div class="quantity-selector">
+                    <label class="quantity-label">Quantity:</label>
+                    <input type="number" id="quantityInput" class="quantity-input" value="1" min="0.5" step="0.5">
+                    <div class="quantity-buttons">
+                        <button class="qty-btn" onclick="decreaseQty()">−</button>
+                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                    </div>
+                </div>
+                
+                <button class="add-button" onclick="logSelectedMeal()">✓ Add to Log</button>
+                <button class="secondary" onclick="showScreen('foodList')">← Back</button>
+            </div>
+
+            <!-- Daily Summary -->
+            <div id="summary" class="screen">
+                <h2>Daily Summary</h2>
+                <div id="summaryContent"></div>
+                <button class="secondary" onclick="showScreen('main')">← Back</button>
+            </div>
+
+            <!-- Settings -->
+            <div id="settings" class="screen">
+                <h2>Settings</h2>
+                <div class="summary">
+                    <h3 style="color: #00d4ff; margin-bottom: 10px;">User Profile</h3>
+                    <div class="stat">
+                        <span class="stat-label">Gender:</span>
+                        <span class="stat-value">Male</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">30</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Activity:</span>
+                        <span class="stat-value">Moderate</span>
+                    </div>
+                </div>
+                <button onclick="clearLog()">🗑️ Clear Today's Log</button>
+                <button class="secondary" onclick="showScreen('main')">← Back</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>USDA FoodData Central • NHS Guidelines • 100% Offline</p>
+        </div>
+    </div>
+
+    <script src="MEAL_LOGGER.js"></script>
+    <script>
+        let foods = {};
+        let guidelines = {};
+        let mealLogger = null;
+        let selectedMealType = null;
+        let selectedFood = null;
+        let selectedServing = null;
+        let allFoods = [];
+
+        // Initialize
+        async function init() {
+            try {
+                console.log('Loading food databases...');
+                
+                // Load food databases
+                const part1Response = await fetch('FOOD_DATABASE_PART1.json');
+                const part1 = await part1Response.json();
+                
+                const part2Response = await fetch('FOOD_DATABASE_PART2.json');
+                const part2 = await part2Response.json();
+                
+                const guidelinesResponse = await fetch('UK_DIETARY_GUIDELINES.json');
+                guidelines = await guidelinesResponse.json();
+                
+                // Combine foods
+                foods = { ...part1.foods, ...part2.foods };
+                allFoods = Object.values(foods);
+                
+                // Initialize meal logger
+                mealLogger = new MealLogger(part1, part2);
+                mealLogger.setUserProfile('male', 30, 'moderate');
+                
+                console.log('✓ Meal Logger initialized');
+                console.log('✓ Foods loaded:', Object.keys(foods).length);
+                console.log('✓ Guidelines loaded');
+                
+                showScreen('main');
+            } catch (error) {
+                console.error('Error initializing:', error);
+                document.querySelector('.content').innerHTML = `
+                    <div class="message error">
+                        ✗ Error loading meal logger<br>
+                        ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // Show screen
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        // Select meal type
+        function selectMealType(type) {
+            selectedMealType = type;
+            showFoodList();
+        }
+
+        // Show food list
+        function showFoodList() {
+            document.getElementById('foodSearch').value = '';
+            renderFoodList(allFoods);
+            showScreen('foodList');
+        }
+        
+        // Render food list
+        function renderFoodList(foodList) {
+            let html = '';
+            
+            foodList.forEach((food, index) => {
+                const allIndex = allFoods.indexOf(food);
+                html += `
+                    <div class="food-item" onclick="selectFood(${allIndex})">
+                        <div class="food-info">
+                            <div class="food-name">${food.name}</div>
+                            <div class="food-serving">${food.servings[0].size}</div>
+                        </div>
+                        <div class="food-cal">${food.servings[0].calories}cal</div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('foodListContent').innerHTML = html;
+        }
+        
+        // Filter foods by search
+        function filterFoods() {
+            const searchTerm = document.getElementById('foodSearch').value.toLowerCase();
+            
+            if (searchTerm === '') {
+                renderFoodList(allFoods);
+                return;
+            }
+            
+            const filtered = allFoods.filter(food => 
+                food.name.toLowerCase().includes(searchTerm)
+            );
+            
+            renderFoodList(filtered);
+        }
+
+        // Select food
+        function selectFood(index) {
+            selectedFood = Object.values(foods)[index];
+            showServingSize();
+        }
+
+        // Show serving size
+        function showServingSize() {
+            document.getElementById('servingTitle').textContent = selectedFood.name;
+            document.getElementById('quantityInput').value = '1';
+            
+            // Update label based on countable/uncountable
+            const quantityLabel = document.querySelector('.quantity-label');
+            if (selectedFood.countable) {
+                quantityLabel.textContent = `Quantity (${selectedFood.unit}):`;
+                document.getElementById('quantityInput').step = '1';
+                document.getElementById('quantityInput').min = '1';
+            } else {
+                quantityLabel.textContent = 'Grams:';
+                document.getElementById('quantityInput').step = '10';
+                document.getElementById('quantityInput').min = '10';
+            }
+            
+            let html = '';
+            selectedFood.servings.forEach((serving, index) => {
+                html += `
+                    <button onclick="selectServing(${index})" style="text-align: left; margin: 4px 0;">
+                        ${serving.size} • <strong>${serving.calories}cal</strong>
+                    </button>
+                `;
+            });
+            
+            document.getElementById('servingContent').innerHTML = html;
+            showScreen('servingSize');
+        }
+        
+        // Select serving
+        function selectServing(index) {
+            selectedServing = selectedFood.servings[index];
+            document.getElementById('quantityInput').value = selectedFood.countable ? '1' : '100';
+        }
+        
+        // Increase quantity
+        function increaseQty() {
+            const input = document.getElementById('quantityInput');
+            const step = selectedFood.countable ? 1 : 10;
+            input.value = parseInt(input.value) + step;
+        }
+        
+        // Decrease quantity
+        function decreaseQty() {
+            const input = document.getElementById('quantityInput');
+            const step = selectedFood.countable ? 1 : 10;
+            const current = parseInt(input.value);
+            const min = selectedFood.countable ? 1 : 10;
+            
+            if (current > min) {
+                input.value = current - step;
+            }
+        }
+        
+        // Log selected meal with quantity
+        function logSelectedMeal() {
+            if (!selectedServing) {
+                showMessage('✗ Please select a serving size', 'error');
+                return;
+            }
+            
+            try {
+                const quantity = parseFloat(document.getElementById('quantityInput').value);
+                
+                if (quantity <= 0) {
+                    showMessage('✗ Quantity must be greater than 0', 'error');
+                    return;
+                }
+                
+                const result = mealLogger.logMeal(
+                    selectedFood.id,
+                    selectedServing.size,
+                    selectedMealType
+                );
+                
+                if (result.success) {
+                    let mealName;
+                    if (selectedFood.countable) {
+                        mealName = `${quantity} ${selectedFood.unit} of ${selectedFood.name}`;
+                    } else {
+                        mealName = `${quantity}g ${selectedFood.name}`;
+                    }
+                    showMessage('✓ Logged: ' + mealName, 'success');
+                    setTimeout(() => showScreen('main'), 1500);
+                } else {
+                    showMessage('✗ Error: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showMessage('✗ Error: ' + error.message, 'error');
+            }
+        }
+
+        // Quick log
+        function quickLog(foodId, servingSize) {
+            try {
+                const food = Object.values(foods).find(f => f.id === foodId);
+                if (!food) {
+                    showMessage('✗ Food not found', 'error');
+                    return;
+                }
+                
+                const result = mealLogger.logMeal(foodId, servingSize, 'snacks');
+                
+                if (result.success) {
+                    showMessage('✓ Logged: ' + food.name, 'success');
+                } else {
+                    showMessage('✗ Error: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showMessage('✗ Error: ' + error.message, 'error');
+            }
+        }
+
+        // Show message
+        function showMessage(text, type) {
+            const msg = document.createElement('div');
+            msg.className = 'message ' + type;
+            msg.textContent = text;
+            document.querySelector('.content').insertBefore(msg, document.querySelector('.content').firstChild);
+            setTimeout(() => msg.remove(), 3000);
+        }
+
+        // Show daily summary
+        function showSummary() {
+            const summary = mealLogger.getDailySummary(null, guidelines);
+            const comp = summary.comparison;
+            
+            let html = `
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-label">Calories</div>
+                        <div class="stat-card-value">${comp.calories.consumed}</div>
+                        <div class="stat-card-label">/ ${comp.calories.recommended}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-label">Protein</div>
+                        <div class="stat-card-value">${Math.round(comp.protein.consumed)}</div>
+                        <div class="stat-card-label">/ ${comp.protein.recommended}g</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-label">Carbs</div>
+                        <div class="stat-card-value">${Math.round(comp.carbs.consumed)}</div>
+                        <div class="stat-card-label">/ ${comp.carbs.recommended}g</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-label">Fat</div>
+                        <div class="stat-card-value">${Math.round(comp.fat.consumed)}</div>
+                        <div class="stat-card-label">/ ${comp.fat.recommended}g</div>
+                    </div>
+                </div>
+                
+                <div class="summary">
+                    <div class="stat">
+                        <span class="stat-label">Sugar</span>
+                        <span class="stat-value ${comp.sugar.percentage > 100 ? 'warning' : ''}">${Math.round(comp.sugar.consumed)}/${comp.sugar.recommended}g</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Fiber</span>
+                        <span class="stat-value ${comp.fiber.percentage < 80 ? 'warning' : 'success'}">${Math.round(comp.fiber.consumed)}/${comp.fiber.recommended}g</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Salt</span>
+                        <span class="stat-value ${comp.salt.percentage > 100 ? 'warning' : ''}">${Math.round(comp.salt.consumed * 10) / 10}/${comp.salt.recommended}g</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Alcohol</span>
+                        <span class="stat-value ${comp.alcohol.percentage > 100 ? 'danger' : ''}">${Math.round(comp.alcohol.consumed * 10) / 10}/${comp.alcohol.recommended} units</span>
+                    </div>
+                    <div class="stat" style="margin-top: 10px; font-weight: bold; border-top: 1px solid #0f3460; padding-top: 10px;">
+                        <span class="stat-label">Remaining</span>
+                        <span class="stat-value success">${comp.calories.remaining} cal</span>
+                    </div>
+                </div>
+                
+                <div class="summary">
+                    <h3 style="color: #00d4ff; margin-bottom: 10px;">Meals Logged</h3>
+                    <div class="stat-card-label">${summary.meals.length} meal${summary.meals.length !== 1 ? 's' : ''}</div>
+                </div>
+            `;
+            
+            document.getElementById('summaryContent').innerHTML = html;
+        }
+
+        // Clear log
+        function clearLog() {
+            if (confirm('Clear today\'s log?')) {
+                mealLogger.clearDailyLog();
+                showMessage('✓ Log cleared', 'success');
+                setTimeout(() => showScreen('main'), 1500);
+            }
+        }
+
+        // Override showScreen to update summary
+        const originalShowScreen = showScreen;
+        showScreen = function(screenId) {
+            if (screenId === 'summary') {
+                showSummary();
+            }
+            originalShowScreen(screenId);
+        };
+
+        // Start initialization when page loads
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>
