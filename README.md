@@ -2,7 +2,7 @@
 
 A lightweight, offline-first rule engine for Zepp OS that enables intelligent routine-based automation on Amazfit smartwatches without cloud dependency or ML training.
 
-## 🎯 Features
+## Features
 
 ### Core Automation
 - **Time-Based Routines**: Schedule actions for specific times and days
