@@ -614,7 +614,10 @@
         // Show serving size
         function showServingSize() {
             document.getElementById('servingTitle').textContent = selectedFood.name;
-            document.getElementById('quantityInput').value = '1';
+            
+            // Auto-select first serving
+            selectedServing = selectedFood.servings[0];
+            document.getElementById('quantityInput').value = selectedFood.countable ? '1' : '100';
             
             // Update label based on countable/uncountable
             const quantityLabel = document.querySelector('.quantity-label');
@@ -630,8 +633,9 @@
             
             let html = '';
             selectedFood.servings.forEach((serving, index) => {
+                const isSelected = index === 0 ? ' style="background: #00d4ff; color: #0f3460;"' : '';
                 html += `
-                    <button onclick="selectServing(${index})" style="text-align: left; margin: 4px 0;">
+                    <button onclick="selectServing(${index})"${isSelected} style="text-align: left; margin: 4px 0;">
                         ${serving.size} • <strong>${serving.calories}cal</strong>
                     </button>
                 `;
